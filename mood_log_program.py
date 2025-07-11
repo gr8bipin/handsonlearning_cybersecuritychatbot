@@ -43,6 +43,7 @@ print("Mood logged successfully for", today)
 df = pd.read_csv("mood_log.csv", parse_dates=["Date"])
 df.set_index("Date", inplace = True)
 df.replace({'None': 0, 'Mild': 1, 'Moderate': 2, 'Severe': 3}, inplace=True)
+
 df.plot.line()
 plt.title("Mood Over Time")
 plt.ylabel("0 = None, 1 = Mild, 2 = Moderate, 3 = Severe")
